@@ -28,8 +28,10 @@ int main(int argc, char **argv)
     Application app(argc, argv);
 
     String str;
-    for (size_t i = 0; i < 100000; ++i) {
-        str += 'a';
+    for (size_t i = 0; i < 10000; ++i) {
+        for (size_t j = 0; j < 10000; ++j) {
+            str += 'a';
+        }
     }
 
     return 0;
