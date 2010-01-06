@@ -33,7 +33,7 @@ def configure(conf):
     conf.check_tool('compiler_cxx qt4')
     conf.find_program('pkg-config')
     conf.check_cfg(package = 'idealcore', args = '--cflags --libs')
-    conf.env['CXXFLAGS'] += ['-std=c++0x', '-g']
+    conf.env['CXXFLAGS'] += ['-std=c++0x', '-02', '-w']
 
 def build(bld):
 	bld.add_subdirs(['file/ideal', 'file/qt',
