@@ -23,8 +23,6 @@ APPNAME    = 'performanceTests'
 srcdir     = '.'
 blddir     = 'build'
 
-performanceTests = ['file/ideal', 'file/qt', 'string/ideal', 'string/qt', 'uri/ideal', 'uri/qt']
-
 def init():
     pass
 
@@ -38,4 +36,6 @@ def configure(conf):
     conf.env['CXXFLAGS'] += ['-std=c++0x', '-g']
 
 def build(bld):
-	bld.add_subdirs(performanceTests)
+	bld.add_subdirs(['file/ideal', 'file/qt',
+                         'string/ideal', 'string/qt',
+                         'uri/ideal', 'uri/qt'])
