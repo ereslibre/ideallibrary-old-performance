@@ -18,12 +18,12 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include <QtCore/QVector>
+#include <QtCore/QList>
 #include <QtCore/QDebug>
 
 int main(int argc, char **argv)
 {
-    QVector<size_t> v;
+    QList<size_t> v;
 
     for (int i = 0; i < 50000; ++i) {
         v.append(i);
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     qDebug() << "number of items " << v.count();
 
-    QVector<size_t>::Iterator it = v.begin();
+    QList<size_t>::Iterator it = v.begin();
     for (int i = 0; i < 50000; ++i) {
         it = v.erase(it);
     }

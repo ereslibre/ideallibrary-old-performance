@@ -21,8 +21,16 @@
 
 bld.new_task_gen(
     features     = 'cxx cprogram qt4',
-    source       = bld.glob('*.cpp'),
+    source       = bld.glob('main.cpp'),
     target       = 'vector',
+    uselib       = 'QTCORE',
+    install_path = None
+)
+
+bld.new_task_gen(
+    features     = 'cxx cprogram qt4',
+    source       = bld.glob('main2.cpp'),
+    target       = 'list',
     uselib       = 'QTCORE',
     install_path = None
 )

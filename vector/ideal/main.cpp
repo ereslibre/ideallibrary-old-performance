@@ -29,9 +29,20 @@ int main(int argc, char **argv)
     for (int i = 0; i < 50000; ++i) {
         v.append(i);
     }
+
     for (int i = 0; i < 50000; ++i) {
         v.prepend(i);
     }
+
+    IDEAL_SDEBUG("number of items " << v.count());
+
+    Vector<size_t>::Iterator it(v);
+    for (int i = 0; i < 50000; ++i) {
+        it.next();
+        it.remove();
+    }
+
+    IDEAL_SDEBUG("number of items " << v.count());
 
     return 0;
 }
